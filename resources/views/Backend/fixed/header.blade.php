@@ -1,226 +1,284 @@
-<header class="header shop">
-    <!-- Topbar -->
-    <div class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-12 col-12">
-                    <!-- Top Left -->
-                    <div class="top-left">
-                        <ul class="list-main">
-                            <li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-                            <li><i class="ti-email"></i> support@shophub.com</li>
-                        </ul>
-                    </div>
-                    <!--/ End Top Left -->
-                </div>
-                <div class="col-lg-7 col-md-12 col-12">
-                    <!-- Top Right -->
-                    <div class="right-content">
-                        <ul class="list-main">
-                            <li><i class="ti-location-pin"></i> Store location</li>
-                            <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
-                            <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                            <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
-                        </ul>
-                    </div>
-                    <!-- End Top Right -->
-                </div>
-            </div>
-        </div>
+<div class="header">
+			
+    <!-- Logo -->
+    <div class="header-left">
+        <a href="index.html" class="logo">
+            <img src="{{url('backend/assets/img/favicon.png')}}" width="40" height="40" alt="">
+        </a>
     </div>
-    <!-- End Topbar -->
-    <div class="middle-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-2 col-12">
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a href="index.html"><img src="{{url('backend/images/logo.png')}}" alt="logo"></a>
-                    </div>
-                    <!--/ End Logo -->
-                    <!-- Search Form -->
-                    <div class="search-top">
-                        <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
-                        <!-- Search Form -->
-                        <div class="search-top">
-                            <form class="search-form">
-                                <input type="text" placeholder="Search here..." name="search">
-                                <button value="search" type="submit"><i class="ti-search"></i></button>
-                            </form>
-                        </div>
-                        <!--/ End Search Form -->
-                    </div>
-                    <!--/ End Search Form -->
-                    <div class="mobile-nav"></div>
-                </div>
-                <div class="col-lg-8 col-md-7 col-12">
-                    <div class="search-bar-top">
-                        <div class="search-bar">
-                            <select>
-                                <option selected="selected">All Category</option>
-                                <option>watch</option>
-                                <option>mobile</option>
-                                <option>kid’s item</option>
-                            </select>
-                            <form>
-                                <input name="search" placeholder="Search Products Here....." type="search">
-                                <button class="btnn"><i class="ti-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-12">
-                    <div class="right-bar">
-                        <!-- Search Form -->
-                        <div class="sinlge-bar">
-                            <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="sinlge-bar">
-                            <a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="sinlge-bar shopping">
-                            <a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
-                            <!-- Shopping Item -->
-                            <div class="shopping-item">
-                                <div class="dropdown-cart-header">
-                                    <span>2 Items</span>
-                                    <a href="#">View Cart</a>
-                                </div>
-                                <ul class="shopping-list">
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Necklace</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$35.00</span></p>
-                                    </li>
-                                </ul>
-                                <div class="bottom">
-                                    <div class="total">
-                                        <span>Total</span>
-                                        <span class="total-amount">$134.00</span>
-                                    </div>
-                                    <a href="checkout.html" class="btn animate">Checkout</a>
-                                </div>
-                            </div>
-                            <!--/ End Shopping Item -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- /Logo -->
+    
+    <a id="toggle_btn" href="javascript:void(0);">
+        <span class="bar-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </a>
+    
+    <!-- Header Title -->
+    <div class="page-title-box">
+        <h3>E-commerce</h3>
     </div>
-    <!-- Header Inner -->
-    <div class="header-inner">
-        <div class="container">
-            <div class="cat-nav-head">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="all-category">
-                            <h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
-                            <ul class="main-category">
-                                <li><a href="#">New Arrivals <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                    <ul class="sub-category">
-                                        <li><a href="#">accessories</a></li>
-                                        <li><a href="#">best selling</a></li>
-                                        <li><a href="#">top 100 offer</a></li>
-                                        <li><a href="#">sunglass</a></li>
-                                        <li><a href="#">watch</a></li>
-                                        <li><a href="#">man’s product</a></li>
-                                        <li><a href="#">ladies</a></li>
-                                        <li><a href="#">westrn dress</a></li>
-                                        <li><a href="#">denim </a></li>
-                                    </ul>
-                                </li>
-                                <li class="main-mega"><a href="#">best selling <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                    <ul class="mega-menu">
-                                        <li class="single-menu">
-                                            <a href="#" class="title-link">Shop Kid's</a>
-                                            <div class="image">
-                                                <img src="https://via.placeholder.com/225x155" alt="#">
-                                            </div>
-                                            <div class="inner-link">
-                                                <a href="#">Kids Toys</a>
-                                                <a href="#">Kids Travel Car</a>
-                                                <a href="#">Kids Color Shape</a>
-                                                <a href="#">Kids Tent</a>
-                                            </div>
-                                        </li>
-                                        <li class="single-menu">
-                                            <a href="#" class="title-link">Shop Men's</a>
-                                            <div class="image">
-                                                <img src="https://via.placeholder.com/225x155" alt="#">
-                                            </div>
-                                            <div class="inner-link">
-                                                <a href="#">Watch</a>
-                                                <a href="#">T-shirt</a>
-                                                <a href="#">Hoodies</a>
-                                                <a href="#">Formal Pant</a>
-                                            </div>
-                                        </li>
-                                        <li class="single-menu">
-                                            <a href="#" class="title-link">Shop Women's</a>
-                                            <div class="image">
-                                                <img src="https://via.placeholder.com/225x155" alt="#">
-                                            </div>
-                                            <div class="inner-link">
-                                                <a href="#">Ladies Shirt</a>
-                                                <a href="#">Ladies Frog</a>
-                                                <a href="#">Ladies Sun Glass</a>
-                                                <a href="#">Ladies Watch</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">accessories</a></li>
-                                <li><a href="#">top 100 offer</a></li>
-                                <li><a href="#">sunglass</a></li>
-                                <li><a href="#">watch</a></li>
-                                <li><a href="#">man’s product</a></li>
-                                <li><a href="#">ladies</a></li>
-                                <li><a href="#">westrn dress</a></li>
-                                <li><a href="#">denim </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-12">
-                        <div class="menu-area">
-                            <!-- Main Menu -->
-                            <nav class="navbar navbar-expand-lg">
-                                <div class="navbar-collapse">	
-                                    <div class="nav-inner">	
-                                        <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active"><a href="#">Home</a></li>
-                                                <li><a href="#">Product</a></li>												
-                                                <li><a href="#">Service</a></li>
-                                                <li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Pages</a></li>									
-                                                <li><a href="#">Blog<i class="ti-angle-down"></i></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="contact.html">Contact Us</a></li>
-                                            </ul>
+    <!-- /Header Title -->
+    
+    <a id="mobile_btn" class="mobile_btn" href="#sidebar"><i class="fa fa-bars"></i></a>
+    
+    <!-- Header Menu -->
+    <ul class="nav user-menu">
+    
+        <!-- Search -->
+        <li class="nav-item">
+            <div class="top-nav-search">
+                <a href="javascript:void(0);" class="responsive-search">
+                    <i class="fa fa-search"></i>
+               </a>
+                <form action="search.html">
+                    <input class="form-control" type="text" placeholder="Search here">
+                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </li>
+        <!-- /Search -->
+    
+        <!-- Flag -->
+        {{-- <li class="nav-item dropdown has-arrow flag-nav">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+                <img src="assets/img/flags/us.png" alt="" height="20"> <span>English</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="javascript:void(0);" class="dropdown-item">
+                    <img src="assets/img/flags/us.png" alt="" height="16"> English
+                </a>
+                <a href="javascript:void(0);" class="dropdown-item">
+                    <img src="assets/img/flags/fr.png" alt="" height="16"> French
+                </a>
+                <a href="javascript:void(0);" class="dropdown-item">
+                    <img src="assets/img/flags/es.png" alt="" height="16"> Spanish
+                </a>
+                <a href="javascript:void(0);" class="dropdown-item">
+                    <img src="assets/img/flags/de.png" alt="" height="16"> German
+                </a>
+            </div>
+        </li> --}}
+        <!-- /Flag -->
+    
+        <!-- Notifications -->
+        <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <i class="fa-regular fa-bell"></i> <span class="badge badge-pill">3</span>
+            </a>
+            <div class="dropdown-menu notifications">
+                <div class="topnav-dropdown-header">
+                    <span class="notification-title">Notifications</span>
+                    <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                </div>
+                <div class="noti-content">
+                    <ul class="notification-list">
+                        <li class="notification-message">
+                            <a href="activities.html">
+                                <div class="media">
+                                    <span class="avatar">
+                                        <img alt="" src="assets/img/profiles/avatar-02.jpg">
+                                    </span>
+                                    <div class="media-body">
+                                        <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+                                        <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
                                     </div>
                                 </div>
-                            </nav>
-                            <!--/ End Main Menu -->	
-                        </div>
-                    </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="activities.html">
+                                <div class="media">
+                                    <span class="avatar">
+                                        <img alt="" src="assets/img/profiles/avatar-03.jpg">
+                                    </span>
+                                    <div class="media-body">
+                                        <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+                                        <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="activities.html">
+                                <div class="media">
+                                    <span class="avatar">
+                                        <img alt="" src="assets/img/profiles/avatar-06.jpg">
+                                    </span>
+                                    <div class="media-body">
+                                        <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+                                        <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="activities.html">
+                                <div class="media">
+                                    <span class="avatar">
+                                        <img alt="" src="assets/img/profiles/avatar-17.jpg">
+                                    </span>
+                                    <div class="media-body">
+                                        <p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+                                        <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="activities.html">
+                                <div class="media">
+                                    <span class="avatar">
+                                        <img alt="" src="assets/img/profiles/avatar-13.jpg">
+                                    </span>
+                                    <div class="media-body">
+                                        <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+                                        <p class="noti-time"><span class="notification-time">2 days ago</span></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="topnav-dropdown-footer">
+                    <a href="activities.html">View all Notifications</a>
                 </div>
             </div>
+        </li>
+        <!-- /Notifications -->
+        
+        <!-- Message Notifications -->
+        <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <i class="fas fa-envelope"></i> <span class="badge badge-pill">8</span>
+            </a>
+            <div class="dropdown-menu notifications">
+                <div class="topnav-dropdown-header">
+                    <span class="notification-title">Messages</span>
+                    <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                </div>
+                <div class="noti-content">
+                    <ul class="notification-list">
+                        <li class="notification-message">
+                            <a href="chat.html">
+                                <div class="list-item">
+                                    <div class="list-left">
+                                        <span class="avatar">
+                                            <img alt="" src="assets/img/profiles/avatar-09.jpg">
+                                        </span>
+                                    </div>
+                                    <div class="list-body">
+                                        <span class="message-author">Richard Miles </span>
+                                        <span class="message-time">12:28 AM</span>
+                                        <div class="clearfix"></div>
+                                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="chat.html">
+                                <div class="list-item">
+                                    <div class="list-left">
+                                        <span class="avatar">
+                                            <img alt="" src="assets/img/profiles/avatar-02.jpg">
+                                        </span>
+                                    </div>
+                                    <div class="list-body">
+                                        <span class="message-author">John Doe</span>
+                                        <span class="message-time">6 Mar</span>
+                                        <div class="clearfix"></div>
+                                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="chat.html">
+                                <div class="list-item">
+                                    <div class="list-left">
+                                        <span class="avatar">
+                                            <img alt="" src="assets/img/profiles/avatar-03.jpg">
+                                        </span>
+                                    </div>
+                                    <div class="list-body">
+                                        <span class="message-author"> Tarah Shropshire </span>
+                                        <span class="message-time">5 Mar</span>
+                                        <div class="clearfix"></div>
+                                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="chat.html">
+                                <div class="list-item">
+                                    <div class="list-left">
+                                        <span class="avatar">
+                                            <img alt="" src="assets/img/profiles/avatar-05.jpg">
+                                        </span>
+                                    </div>
+                                    <div class="list-body">
+                                        <span class="message-author">Mike Litorus</span>
+                                        <span class="message-time">3 Mar</span>
+                                        <div class="clearfix"></div>
+                                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="chat.html">
+                                <div class="list-item">
+                                    <div class="list-left">
+                                        <span class="avatar">
+                                            <img alt="" src="assets/img/profiles/avatar-08.jpg">
+                                        </span>
+                                    </div>
+                                    <div class="list-body">
+                                        <span class="message-author"> Catherine Manseau </span>
+                                        <span class="message-time">27 Feb</span>
+                                        <div class="clearfix"></div>
+                                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="topnav-dropdown-footer">
+                    <a href="chat.html">View all Messages</a>
+                </div>
+            </div>
+        </li>
+        <!-- /Message Notifications -->
+
+        <li class="nav-item dropdown has-arrow main-drop">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <span class="user-img"><img src="{{url('backend/assets/img/momen.jpg')}}" alt="">
+                <span class="status online"></span></span>
+                <span>Admin</span>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="profile.html">My Profile</a>
+                <a class="dropdown-item" href="settings.html">Settings</a>
+                <a class="dropdown-item" href="login.html">Logout</a>
+            </div>
+        </li>
+    </ul>
+    <!-- /Header Menu -->
+    
+    <!-- Mobile Menu -->
+    <div class="dropdown mobile-user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="profile.html">My Profile</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="login.html">Logout</a>
         </div>
     </div>
-    <!--/ End Header Inner -->
-</header>
+    <!-- /Mobile Menu -->
+    
+</div>

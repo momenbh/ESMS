@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\backend\DashbordController;
+use App\Http\Controllers\backend\ProductController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Backend.master');
-});
+// Route::get('/', function () {
+//     return view('Backend.master');
+// });
+
+
+//dashboard
+Route::get('/',[DashbordController::class,'dashboard']);
+
+//product
+Route::get('/cerate/product',[ProductController::class,'generate'])->name('product.create');
+Route::get('/form/product',[ProductController::class,'form'])->name('form.product');
+Route::post('/store/product',[ProductController::class,'store'])->name('store.product');
+
+
+
