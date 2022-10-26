@@ -5,21 +5,20 @@
                 <li class="submenu">
                     <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span></span></a>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="la la-cube"></i><span>Vendors</span></a>
+                <li>
+                    <a href="{{route('vendor.create')}}"><i class="la la-cube"></i><span>Vendors</span></a>
                 </li>
                 <li>
                     <a href="{{route('product.create')}}"><i class="fa fa-cart-shopping"></i><span>Products</span></a> 
                 </li>
                 <li> 
-                    <a href="clients.html"><i class="la la-users"></i> <span>Customer</span></a>
+                    <a href="{{route('customer.create')}}"><i class="la la-users"></i> <span>Customer</span></a>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i class="fa fa-cart-shopping"></i> </i> <span> Categories</span> <span class="menu-arrow"></span></a>
+                    <a href=""><i class="fa fa-cart-shopping"></i> </i> <span> Category</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
+                        <li><a href="{{route('create.category')}}">Categories</a>
                         <li><a href="projects.html"> Sub Categories</a></li>
-                        {{-- <li><a href="tasks.html"> Mange Categories</a></li>
-                        <li><a href="task-board.html">Categories Order</a></li> --}}
                     </ul>
                 </li>
                 <li> 

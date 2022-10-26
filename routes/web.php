@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\backend\DashbordController;
-use App\Http\Controllers\backend\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\VendorController;
+use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\DashbordController;
 
 
 /*
@@ -25,9 +28,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[DashbordController::class,'dashboard']);
 
 //product
-Route::get('/cerate/product',[ProductController::class,'generate'])->name('product.create');
+Route::get('/create/product',[ProductController::class,'generate'])->name('product.create');
 Route::get('/form/product',[ProductController::class,'form'])->name('form.product');
 Route::post('/store/product',[ProductController::class,'store'])->name('store.product');
+//vendor
+Route::get('/vendor',[VendorController::class,'create'])->name('vendor.create');
+Route::get('/form/vendor',[VendorController::class,'form'])->name('form.vendor');
+Route::post('/store/vendor',[VendorController::class,'store'])->name('store.vendor');
+//customer
+Route::get('/customer',[CustomerController::class,'create'])->name('customer.create');
+//catagory
+Route::get('/category',[CategoryController::class,'create'])->name('create.category');
+Route::get('/category/form',[CategoryController::class,'form'])->name('form.category');
+Route::post('/category/store',[CategoryController::class,'store'])->name('store.category');
 
 
 
