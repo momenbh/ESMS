@@ -19,6 +19,7 @@ class ProductController extends Controller
         Product::create([
             'product_id'=>$request->product_id,
             'product_name'=>$request->product_name,
+            'brands'=>$request->brands,
             'stock_status'=>$request->stock_status,
             'product_wranty'=>$request->product_wranty,
 

@@ -7,6 +7,8 @@
         <input id="product" type="number" class="form-control" name="product_id">
         <label for="name">Product Name</label>
         <input id="name" type="text" class="form-control" name="product_name">
+        <label for="brands">Brands</label>
+        <input id="brands" type="text" class="form-control" name="brands">
         <label for="stock">Stock Status</label>
         <input id="stock" type="text" class="form-control" name="stock_status">
         <label for="wranty">Product wranty</label>

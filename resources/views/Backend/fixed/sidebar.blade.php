@@ -18,31 +18,31 @@
                     <a href=""><i class="fa fa-cart-shopping"></i> </i> <span> Category</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="{{route('create.category')}}">Categories</a>
-                        <li><a href="projects.html"> Sub Categories</a></li>
+                        <li><a href="{{route('create.subcategory')}}"> Sub Categories</a></li>
                     </ul>
                 </li>
                 <li> 
-                    <a href="leads.html"><i class="fa fa-copyright"></i><span>Brands</span></a>
+                    {{-- <a href="leads.html"><i class="fa fa-copyright"></i><span>Brands</span></a> --}}
                 </li>
                 <li> 
                     <a href="tickets.html"><i class="fas fa-heart"></i> <span>WishList</span></a>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="la la-files-o"></i> <span>Discount</span></a>
+                <li>
+                    <a href="{{route('product.discount')}}"><i class="la la-files-o"></i> <span>Discount</span></a>
                    
                 </li>
                 <li class="submenu">
                     <a href="#"><i class="fa fa-cart-shopping"></i> <span>Cart</span></a>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="la la-money"></i> <span> Payment</span></a>
+                <li>
+                    <a href="{{route('create.payment')}}"><i class="la la-money"></i> <span> Payment</span></a>
                     
                 </li>
                 <li> 
-                    <a href="policies.html"><i class="la la-file-pdf-o"></i> <span>Feedback</span></a>
+                    <a href="{{route('create.feedback')}}"><i class="la la-file-pdf-o"></i> <span>Feedback</span></a>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="la la-pie-chart"></i> <span> Reports </span></a>
+                <li>
+                    <a href="{{route('create.report')}}"><i class="la la-pie-chart"></i> <span> Reports </span></a>
                 </li>
             </ul>
         </div>
