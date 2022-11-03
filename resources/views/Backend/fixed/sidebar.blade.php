@@ -31,6 +31,10 @@
                     <a href="{{route('product.discount')}}"><i class="la la-files-o"></i> <span>Discount</span></a>
                    
                 </li>
+                <li>
+                    <a href="{{route('cretae.oredr')}}"><i class="la la-files-o"></i> <span>Order</span></a>
+                   
+                </li>
                 <li class="submenu">
                     <a href="#"><i class="fa fa-cart-shopping"></i> <span>Cart</span></a>
                 </li>

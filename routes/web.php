@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\backend\DashbordController;
 use App\Http\Controllers\backend\DiscountController;
 use App\Http\Controllers\backend\FeedbackController;
+use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\SubcategoryController;
@@ -52,12 +53,6 @@ Route::get('/store/delete/{id}',[VendorController::class,'delete'])->name('delet
 Route::get('/store/edit/{id}',[VendorController::class,'edit'])->name('edit.vendor');
 Route::post('/store/update/{id}',[VendorController::class,'update'])->name('update.vendor');
 
-
-
-
-
-
-
 //customer
 
 Route::get('/customer',[CustomerController::class,'create'])->name('customer.create');
@@ -100,6 +95,15 @@ Route::get('/payment/delete/{id}',[PaymentController::class,'delete'])->name('de
 Route::get('/payment/view/{id}',[PaymentController::class,'views'])->name('view.payment');
 Route::get('/payment/edit/{id}',[PaymentController::class,'edit'])->name('edit.payment');
 Route::get('/payment/update/{id}',[PaymentController::class,'update'])->name('update.payment');
+
+//order
+Route::get('/order',[OrderController::class,'order'])->name('cretae.oredr');
+Route::get('/order/form',[OrderController::class,'form'])->name('form.oredr');
+Route::post('/order/store/',[OrderController::class,'store'])->name('store.oredr');
+Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('delete.order');
+Route::get('/order/view/{id}',[OrderController::class,'view'])->name('view.order');
+Route::get('/order/edit/{id}',[OrderController::class,'edit'])->name('edit.order');
+Route::post('/order/update/{id}',[OrderController::class,'update'])->name('update.order');
 
 
 
