@@ -37,10 +37,10 @@ Route::get('/',[DashbordController::class,'dashboard']);
 Route::get('/create/product',[ProductController::class,'generate'])->name('product.create');
 Route::get('/form/product',[ProductController::class,'form'])->name('form.product');
 Route::post('/store/product',[ProductController::class,'store'])->name('store.product');
-Route::get('/store/view/{id}',[ProductController::class,'view'])->name('view.product');
-Route::get('/store/delete/{id}',[ProductController::class,'delete'])->name('delete.product');
-Route::get('/store/edit/{id}',[ProductController::class,'edit'])->name('edit.product');
-Route::get('/store/update/{id}',[ProductController::class,'update'])->name('update.product');
+Route::get('/product/view/{id}',[ProductController::class,'view'])->name('view.product');
+Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('delete.product');
+Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('edit.product');
+Route::get('/product/update/{id}',[ProductController::class,'update'])->name('update.product');
 
 
 

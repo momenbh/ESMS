@@ -21,7 +21,7 @@
                 <div class="card-body bg-warning">
                     <span class="dash-widget-icon"><i class="fa fa-cart-shopping"></i></span>
                     <div class="dash-widget-info">
-                        <h3>112</h3>
+                        <h3>{{$product->count()}}</h3>
                         <span>Products</span>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 <div class="card-body bg-danger">
                     <span class="dash-widget-icon"><i class="fa fa-cart-shopping"></i></span>
                     <div class="dash-widget-info">
-                        <h3>44</h3>
+                        <h3>{{$category->count()}}</h3>
                         <span>Categories</span>
                     </div>
                 </div>
