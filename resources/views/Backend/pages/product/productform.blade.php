@@ -13,7 +13,7 @@
         <input id="stock" type="text" class="form-control" name="stock_status">
         <label for="wranty">Product wranty</label>
         <input id="wranty" type="number" class="form-control" name="product_wranty">
-        <label for="image">Image</label>
+        <label for="image">Product wranty</label>
         <input id="image" type="file" class="form-control" name="image">
         <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
     </form>

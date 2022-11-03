@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 class PaymentController extends Controller
 {
     public function Payment(){
-        return view('Backend.pages.Payment.payment');
+        $payment=Payment::orderby('id','desc')->paginate(5);
+        return view('Backend.pages.Payment.payment',compact('payment'));
     }
     public function form(){
         return view('Backend.pages.Payment.paymentform');
@@ -24,6 +25,27 @@ class PaymentController extends Controller
             'customer_name'=>$request->customer_name,
             'status'=>$request->status,
         ]);
-        return Redirect()->back();
+        return Redirect()->route('create.payment');
+    }
+    public function delete($id){
+        $payment=Payment::find($id)->delete();
+        return redirect()->back();
+    }
+    public function edit($id){
+        $payment=Payment::find($id);
+        return view('Backend.pages.Payment.paymentedit',compact('payment'));
+
+    }
+    public function update(Request $request,$id){
+        $payment=Payment::find($id);
+        $payment->update([
+            'amount'=>$request->amount,
+            'vendors'=>$request->vendors,
+            'customer_id'=>$request->customer_id,
+            'customer_name'=>$request->customer_name,
+            'status'=>$request->status,
+
+        ]);
+        return redirect()->route('create.payment');
     }
 }

@@ -36,10 +36,28 @@ Route::get('/',[DashbordController::class,'dashboard']);
 Route::get('/create/product',[ProductController::class,'generate'])->name('product.create');
 Route::get('/form/product',[ProductController::class,'form'])->name('form.product');
 Route::post('/store/product',[ProductController::class,'store'])->name('store.product');
+Route::get('/store/view/{id}',[ProductController::class,'view'])->name('view.product');
+Route::get('/store/delete/{id}',[ProductController::class,'delete'])->name('delete.product');
+Route::get('/store/edit/{id}',[ProductController::class,'edit'])->name('edit.product');
+Route::get('/store/update/{id}',[ProductController::class,'update'])->name('update.product');
+
+
+
 //vendor
 Route::get('/vendor',[VendorController::class,'create'])->name('vendor.create');
 Route::get('/form/vendor',[VendorController::class,'form'])->name('form.vendor');
 Route::post('/store/vendor',[VendorController::class,'store'])->name('store.vendor');
+Route::get('/store/view/{id}',[VendorController::class,'view'])->name('view.vendor');
+Route::get('/store/delete/{id}',[VendorController::class,'delete'])->name('delete.vendor');
+Route::get('/store/edit/{id}',[VendorController::class,'edit'])->name('edit.vendor');
+Route::post('/store/update/{id}',[VendorController::class,'update'])->name('update.vendor');
+
+
+
+
+
+
+
 //customer
 
 Route::get('/customer',[CustomerController::class,'create'])->name('customer.create');
@@ -73,21 +91,38 @@ Route::get('/product/discount/delete/{id}',[DiscountController::class,'delete'])
 Route::get('/product/discount/edit/{id}',[DiscountController::class,'edit'])->name('edit.discount');
 Route::post('/product/discount/update/{id}',[DiscountController::class,'update'])->name('update.discount');
 
-
-
-
-//
+//payment
 Route::get('/payment',[PaymentController::class,'Payment'])->name('create.payment');
 Route::get('/payment/form',[PaymentController::class,'form'])->name('form.payment');
-Route::post('/payment/store',[PaymentController::class,'store'])->name('store.payment');
+Route::post('/payment/store',[PaymentController::class,'store'])->name('store.payment'); 
+Route::get('/payment/delete/{id}',[PaymentController::class,'delete'])->name('delete.payment');
+Route::get('/payment/delete/{id}',[PaymentController::class,'delete'])->name('delete.payment');
+Route::get('/payment/view/{id}',[PaymentController::class,'views'])->name('view.payment');
+Route::get('/payment/edit/{id}',[PaymentController::class,'edit'])->name('edit.payment');
+Route::get('/payment/update/{id}',[PaymentController::class,'update'])->name('update.payment');
+
+
+
+
+
+
 //feedback
 Route::get('/feedback',[FeedbackController::class,'feedback'])->name('create.feedback');
 Route::get('/feedback/form',[FeedbackController::class,'form'])->name('form.feedback');
 Route::post('/feedback/store',[FeedbackController::class,'store'])->name('store.feedback');
+Route::get('/feedback/view/{id}',[FeedbackController::class,'views'])->name('view.feedback');
+Route::get('/feedback/edit/{id}',[FeedbackController::class,'edit'])->name('edit.feedback');
+Route::post('/feedback/update/{id}',[FeedbackController::class,'update'])->name('update.feedback');
+Route::get('/feedback/delete/{id}',[FeedbackController::class,'delete'])->name('delete.feedback');
+
 //reports
 Route::get('/report',[ReportController::class,'report'])->name('create.report');
 Route::get('/report/form',[ReportController::class,'form'])->name('form.report');
 Route::post('/report/store',[ReportController::class,'store'])->name('store.report');
+Route::get('/report/delete/{id}',[ReportController::class,'delete'])->name('delete.report');
+Route::get('/report/view/{id}',[ReportController::class,'view'])->name('view.report');
+Route::get('/report/edit/{id}',[ReportController::class,'edit'])->name('edit.report');
+Route::post('/report/update/{id}',[ReportController::class,'update'])->name('update.report');
 
 
 
