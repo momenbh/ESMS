@@ -16,6 +16,14 @@ class FeedbackController extends Controller
         return view('Backend.pages.feedback.feedbackform');
     }
     public function store(Request $request){
+         $request->validate([
+            'product_id'=>'required|integer|min:1',
+            'rating'=>'required|string',
+            'customer_id'=>'required|integer|min:1',
+            'feedback_id'=>'required|integer|min:1',
+
+         ]);
+
         Feedback::create([
             'product_id'=>$request->product_id,
             'rating'=>$request->rating,

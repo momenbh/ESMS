@@ -20,14 +20,14 @@
         <tbody>
             @foreach ($payment as $key=>$data)
                 
-            @endforeach
+       
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$payment->amount}}</td>
-                <td scope="col">{{$payment->vendors}}</td>
-                <td scope="col">{{$payment->customer_id}}</td>
-                <td scope="col">{{$payment->customer_name}}</td>
-                <td scope="col">{{$payment->status}}</td>
+                <td scope="col">{{$data->amount}}</td>
+                <td scope="col">{{$data->vendors}}</td>
+                <td scope="col">{{$data->customer_id}}</td>
+                <td scope="col">{{$data->customer_name}}</td>
+                <td scope="col">{{$data->status}}</td>
                 <td scope="col">
                     <a class="btn btn-primary" href="{{route('view.payment',$data->id)}}"><i class="fa-regular fa-eye"></i></a>
                     <a class="btn btn-success" href="{{route('edit.payment',$data->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -36,7 +36,7 @@
                 </td>
             </tr>
         </tbody>
-
+        @endforeach
     </table>
 </div>
 {{$payment->links()}}

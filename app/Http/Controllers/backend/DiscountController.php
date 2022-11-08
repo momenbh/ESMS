@@ -16,6 +16,15 @@ class DiscountController extends Controller
         return view('Backend.pages.Discount.discountform');
     }
     public function store(Request $request){
+
+        $request->validate([
+         'product_id'=>'required',
+         'product_price'=>'required|numeric|min:1',
+         'product_name'=>'required|string',
+         'vendors_name'=>'required|string',
+         'percent'=>'required|integer|min:1',
+         
+        ]);
         Discount::create([
          'product_id'=>$request->product_id,
          'product_price'=>$request->product_price,

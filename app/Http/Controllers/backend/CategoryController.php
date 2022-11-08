@@ -16,6 +16,12 @@ class CategoryController extends Controller
         return view('Backend.pages.category.categoryform');
     }
     public function store(Request $request){
+          
+        $request->validate([
+            'category_id'=>'required|numeric',
+            'category_name'=>'required',
+        ]);
+
         Category::create([
         'category_id'=>$request->category_id,
         'category_name'=>$request->category_name,

@@ -7,6 +7,7 @@ namespace App\Http\Controllers\backend;
 use App\Models\Report;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class ReportController extends Controller
 {
@@ -18,6 +19,15 @@ class ReportController extends Controller
         return view('Backend.pages.report.reportform');
     }
     public function store(Request $request){
+        $request->validate([
+            'order_id'=>'required|integer|min:1',
+            'email'=>'required|string',
+            'date'=>'required|integer',
+            'product_name'=>'required|string',
+            'product_quantity'=>'required|integer|min:1',
+            'product_price'=>'required|integer|min:1',
+            'total_amount'=>'required|integer|min:1',
+        ]);
         Report::create([
          'order_id'=>$request->order_id,
          'email'=>$request->email,

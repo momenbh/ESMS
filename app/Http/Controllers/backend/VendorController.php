@@ -16,6 +16,13 @@ class VendorController extends Controller
         return view('Backend.pages.vendor.vendorform');
     }
     public function store(Request $request){
+        $request->validate([
+            'vendor_name'=>'required|string',
+            'Product_name'=>'required|string',
+            'address'=>'required|string',
+            'email'=>'required|string',
+        ]);
+
         Vendor::create([
             'vendor_name'=>$request->vendor_name,
             'Product_name'=>$request->Product_name,

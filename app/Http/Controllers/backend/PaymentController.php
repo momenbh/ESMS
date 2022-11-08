@@ -17,6 +17,14 @@ class PaymentController extends Controller
         return view('Backend.pages.Payment.paymentform');
     }
     public function store(Request $request){
+        $request->validate([
+            
+            'amount'=>'required|integer|min:1',
+            'vendors'=>'required|string',
+            'customer_id'=>'required|integer|min:1',
+            'customer_name'=>'required|string',
+            'status'=>'required|string',
+        ]);
         Payment::create([
 
             'amount'=>$request->amount,

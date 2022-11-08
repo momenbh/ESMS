@@ -17,6 +17,16 @@ class ProductController extends Controller
         return view('Backend.pages.product.productform');
     }
     public function store(Request $request){
+
+          $request->validate([
+            'product_id'=>'required|integer|min:1',
+            'product_name'=>'required|string',
+            'brands'=>'required|string',
+            'stock_status'=>'required|string',
+            'product_wranty'=>'required|integer|min:1',
+
+          ]);
+
         Product::create([
             'product_id'=>$request->product_id,
             'product_name'=>$request->product_name,
