@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -13,19 +14,21 @@ class OrderController extends Controller
         return view('Backend.pages.Order.order',compact('order'));
     }
     public function form(){
-        return view('Backend.pages.order.orderform');
+        $product=Product::all();
+        return view('Backend.pages.order.orderform',compact('product'));
     }
     public function store(Request$request){
-        $request->validate([
-            'coustomer_id'=>'required|integer|min:1',
-            'total_price'=>'required|integer|min:1',
-            'total_discount'=>'required|integer|min:1',
-            'total_vat'=>'required|integer',
-            'total_payable'=>'required|string',
-            'sell_by'=>'required|string',
-        ]);
+        // dd($request->all());
+        // $request->validate([
+           
+        //     'total_price'=>'required|integer|min:1',
+        //     'total_discount'=>'required|integer|min:1',
+        //     'total_vat'=>'required|integer',
+        //     'total_payable'=>'required|string',
+        //     'sell_by'=>'required|string',
+        // ]);
         Order::create([
-         'coustomer_id'=>$request->coustomer_id,
+         'product_id'=>$request->product_id,
          'total_price'=>$request->total_price,
          'total_discount'=>$request->total_discount,
          'total_vat'=>$request->total_vat,

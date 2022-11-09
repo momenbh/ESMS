@@ -10,8 +10,12 @@
     
     @csrf
    <div style="padding: 15px">
-    <label for="id">Customer Id</label>
-    <input  id="id" type="number" class="form-control" name="coustomer_id" required>
+    <label for="name"> selete product</label>
+    <select name="product_id" id="" class="form-control">
+        @foreach ($product as $data) 
+        <option value="{{$data->id}}">{{$data->product_name}}</option>
+        @endforeach
+    </select>
     <label for="price">Total price</label>
     <input  id="price" type="number" class="form-control" name="total_price" required>
     <label for="discount">Total Discount</label>

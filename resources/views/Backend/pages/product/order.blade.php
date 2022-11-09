@@ -24,7 +24,7 @@
             
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$data->orderelation->product_name}}</td>
+                <td scope="col">{{$data->orderrelation->product_name}}</td>
                 <td scope="col">{{$data->total_price}}</td>
                 <td scope="col">{{$data->total_discount}}</td>
                 <td scope="col">{{$data->total_vat}}</td>
