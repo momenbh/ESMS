@@ -11,11 +11,25 @@
     </div>
 
         @csrf
-        <label for="Catagory">Category Id</label>
-        <input  id="catagory" type="number" class="form-control" name="category_id" required>
-        <label for="Catagory">Category Name</label>
-        <input  id="catagory" type="text" class="form-control" name="category_name" required>
-        <button type="submit" class="btn btn-success" style="margin-top: 10px">Create</button>
+       
+            <label for="name">Category Name</label>
+            <input id="name" name="category_name" type="text" class="form-control" required  >
+            <label for="description">Description</label>
+            <textarea  id="description"class="form-control" name="description" required></textarea>
+        <div class="form-group">
+            <label for="status">Select Status</label>
+            <select name="status" id="status" class="form-control">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input id="image" type="file" class="form-control"  name="image">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 @endsection

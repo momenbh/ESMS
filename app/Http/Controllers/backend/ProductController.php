@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -11,28 +12,33 @@ class ProductController extends Controller
 {
     public function generate(){
         $product=Product::orderby('id','desc')->paginate(5);
-        return view('Backend.pages.product.product',compact('product'));
+        
+        return view('Backend.pages.product.product',compact('product',));
     }
     public function form(){
-        return view('Backend.pages.product.productform');
+        $category=Category::all();
+        return view('Backend.pages.product.productform',compact('category'));
     }
     public function store(Request $request){
+        //    dd($request->all());
+        //   $request->validate([
+          
+        //     'product_name'=>'required|string',
+        //     'product_price'=>'required|integer',
+        //     'brands'=>'required|string',
+        //     'stock_status'=>'required|string',
+        //     'product_wranty'=>'required|integer|min:1',
 
-          $request->validate([
-            'product_id'=>'required|integer|min:1',
-            'product_name'=>'required|string',
-            'brands'=>'required|string',
-            'stock_status'=>'required|string',
-            'product_wranty'=>'required|integer|min:1',
-
-          ]);
+        //   ]);
 
         Product::create([
-            'product_id'=>$request->product_id,
+          
             'product_name'=>$request->product_name,
+            'product_price'=>$request->product_price,
             'brands'=>$request->brands,
             'stock_status'=>$request->stock_status,
             'product_wranty'=>$request->product_wranty,
+            'category_id'=>$request->category_id,
 
         ]);
         return redirect()->route('product.create');

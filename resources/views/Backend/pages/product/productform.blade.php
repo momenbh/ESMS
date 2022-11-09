@@ -11,17 +11,26 @@
 
 
         @csrf
-        <label for="product">Product id</label>
-        <input id="product" type="number" class="form-control" name="product_id" required>
+
         <label for="name">Product Name</label>
         <input id="name" type="text" class="form-control" name="product_name" required>
+        <label for="price">Product price</label>
+        <input id="price" type="numer" class="form-control" name="product_price" required>
         <label for="brands">Brands</label>
         <input id="brands" type="text" class="form-control" name="brands" required>
         <label for="stock">Stock Status</label>
         <input id="stock" type="text" class="form-control" name="stock_status" required>
         <label for="wranty">Product wranty</label>
         <input id="wranty" type="number" class="form-control" name="product_wranty" required>
-        <label for="image">Product wranty</label>
+        <div class="form-group">
+            <label for="">Select Category</label>
+            <select name="category_id" id="" class="form-control">
+                @foreach($category  as $cat)
+                <option value="{{$cat->id}}">{{$cat->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <label for="image">Image</label>
         <input id="image" type="file" class="form-control" name="image" >
         <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
     </form>

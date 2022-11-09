@@ -9,10 +9,11 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Product id</th>
             <th scope="col">Product Name</th>
+            <th scope="col">product price</th>
             <th scope="col">Brands</th>
             <th scope="col">Stock Status</th>
+            <th scope="col">Category Name</th>
             <th scope="col">Product wranty</th>
             <th scope="col">Image</th>
             <th scope="col">Action</th>
@@ -24,10 +25,11 @@
            
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$data->product_id}}</td>
                 <td scope="col">{{$data->product_name}}</td>
+                <td scope="col">{{$data->product_price}}BDT</td>
                 <td scope="col">{{$data->brands}}</td>
                 <td scope="col">{{$data->stock_status}}</td>
+                <td scope="col">{{$data->categoryrelation->name}}</td>
                 <td scope="col">{{$data->product_wranty}}</td>
                 <td scope="col">{{$data->image}}</td>
                 <td scope="col">

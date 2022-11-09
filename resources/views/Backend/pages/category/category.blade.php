@@ -8,10 +8,12 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">Category Id</th>
-                <th scope="col">Category Name</th>
-                <th scope="col">Action</th>
+            <th scope="col">ID</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Image</th>
+            <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,8 +22,11 @@
             
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$data->category_id}}</td>
-                <td scope="col">{{$data->category_name}}</td>
+                <td scope="col">{{$data->name}}</td>
+                <td scope="col">{{$data->description}}</td>
+                <td scope="col">{{$data->status}}</td>
+                <td scope="col">{{$data->image}}</td>
+                
                 <td >
                     <a class="btn btn-primary" href="{{route('view.category',$data->id)}}"><i class="fa-regular fa-eye"></i></a>
                     <a class="btn btn-success" href="{{route('edit.category',$data->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
