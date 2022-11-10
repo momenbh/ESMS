@@ -16,17 +16,26 @@ class CategoryController extends Controller
         return view('Backend.pages.category.categoryform');
     }
     public function store(Request $request){
-          
+        //   dd($request->all());
         $request->validate([
             'category_name'=>'required|string',
             'status'=>'required|string',
             'description'=>'required|string',
+            'image'=>'required',
         ]);
-
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads/category',$fileName);
+        }
+        
         Category::create([
             'name'=>$request->category_name,
             'status'=>$request->status,
             'description'=>$request->description,
+            'image' => $fileName,
         ]);
         return redirect()->route('create.category');
     }

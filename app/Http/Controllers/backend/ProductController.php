@@ -21,15 +21,25 @@ class ProductController extends Controller
     }
     public function store(Request $request){
         //    dd($request->all());
-        //   $request->validate([
+          $request->validate([
           
-        //     'product_name'=>'required|string',
-        //     'product_price'=>'required|integer',
-        //     'brands'=>'required|string',
-        //     'stock_status'=>'required|string',
-        //     'product_wranty'=>'required|integer|min:1',
+            'product_name'=>'required|string',
+            'product_price'=>'required|integer',
+            'brands'=>'required|string',
+            'stock_status'=>'required|string',
+            'product_wranty'=>'required|integer|min:1',
+            'category_id'=>'required',
+            'image'=>'required',
 
-        //   ]);
+          ]);
+
+          $fileName=null;
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+        }
 
         Product::create([
           
@@ -39,6 +49,7 @@ class ProductController extends Controller
             'stock_status'=>$request->stock_status,
             'product_wranty'=>$request->product_wranty,
             'category_id'=>$request->category_id,
+            'image' => $fileName,
 
         ]);
         return redirect()->route('product.create');

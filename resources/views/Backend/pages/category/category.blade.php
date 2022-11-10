@@ -19,13 +19,16 @@
         <tbody>
             @foreach ( $category as $key=>$data)
                 
-            
+            {{-- @dd($data->image) --}}
             <tr>
                 <td scope="col">{{$key+1}}</td>
                 <td scope="col">{{$data->name}}</td>
                 <td scope="col">{{$data->description}}</td>
                 <td scope="col">{{$data->status}}</td>
-                <td scope="col">{{$data->image}}</td>
+                <td scope="col">
+                    
+                    <img  width="100px" stule="border-radius: 10px" src="{{url('/uploads/category/'.$data->image)}}" alt="category">
+                </td>
                 
                 <td >
                     <a class="btn btn-primary" href="{{route('view.category',$data->id)}}"><i class="fa-regular fa-eye"></i></a>

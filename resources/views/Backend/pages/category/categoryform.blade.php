@@ -1,7 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
 <div style="padding: 20px">
-    <form action="{{route('store.category')}}" method="POST">
+    <form action="{{route('store.category')}}" method="POST" enctype="multipart/form-data">
 
         @if ($errors->any())
             @foreach ($errors->all() as $message)

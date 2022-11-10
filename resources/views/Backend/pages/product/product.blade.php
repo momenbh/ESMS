@@ -31,7 +31,12 @@
                 <td scope="col">{{$data->stock_status}}</td>
                 <td scope="col">{{$data->categoryrelation->name}}</td>
                 <td scope="col">{{$data->product_wranty}}</td>
-                <td scope="col">{{$data->image}}</td>
+                <td scope="col">
+                            
+                    <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="product_image">
+                </td>
+
+                    </td>
                 <td scope="col">
                     <a class="btn btn-primary" href="{{route('view.product',$data->id)}}"><i class="fa-regular fa-eye"></i></a>
                     <a class="btn btn-success" href="{{route('edit.product',$data->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>

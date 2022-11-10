@@ -1,7 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
 <div style="padding: 20px">
-    <form action="{{route('store.product')}}" method="POST">
+    <form action="{{route('store.product')}}" method="POST" enctype="multipart/form-data">
 
         @if ($errors->any())
         @foreach ($errors->all() as $message)
@@ -24,14 +24,14 @@
         <input id="wranty" type="number" class="form-control" name="product_wranty" required>
         <div class="form-group">
             <label for="">Select Category</label>
-            <select name="category_id" id="" class="form-control">
+            <select name="category_id" id="" class="form-control" required>
                 @foreach($category  as $cat)
                 <option value="{{$cat->id}}">{{$cat->name}}</option>
                 @endforeach
             </select>
         </div>
         <label for="image">Image</label>
-        <input id="image" type="file" class="form-control" name="image" >
+        <input id="image" type="file" class="form-control" name="image" required>
         <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
     </form>
 </div>
