@@ -23,8 +23,8 @@
         <label for="wranty">Product wranty</label>
         <input id="wranty" type="number" class="form-control" name="product_wranty" required>
         <div class="form-group">
-            <label for="">Select Category</label>
-            <select name="category_id" id="" class="form-control" required>
+            <label for="category">Select Category</label>
+            <select name="category_id" id="category" class="form-control" required>
                 @foreach($category  as $cat)
                 <option value="{{$cat->id}}">{{$cat->name}}</option>
                 @endforeach

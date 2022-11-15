@@ -71,12 +71,12 @@ class ProductController extends Controller
         $product=Product::find($id);
         $product->update([
 
-            'product_id'=>$request->product_id,
             'product_name'=>$request->product_name,
+            'product_price'=>$request->product_price,
             'brands'=>$request->brands,
             'stock_status'=>$request->stock_status,
             'product_wranty'=>$request->product_wranty,
-
+           
 
         ]);
         return redirect()->route('product.create');

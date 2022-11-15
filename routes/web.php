@@ -12,7 +12,9 @@ use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\SubcategoryController;
+use App\Http\Controllers\logincontroller;
 use App\Models\Category;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +32,18 @@ use App\Models\Category;
 // });
 
 
+
+//login
+Route::get('/login',[logincontroller::class,'login'])->name('login');
+Route::post('/do-login',[logincontroller::class,'dologin'])->name('do.login');
+
+Route::group(['middleware'=>'auth'],function(){
+
+Route::get('/logout',[logincontroller::class,'logout'])->name('logout');
+
+
 //dashboard
-Route::get('/',[DashbordController::class,'dashboard']);
+Route::get('/',[DashbordController::class,'dashboard'])->name('dashboard');
 
 //product
 Route::get('/create/product',[ProductController::class,'generate'])->name('product.create');
@@ -40,7 +52,7 @@ Route::post('/store/product',[ProductController::class,'store'])->name('store.pr
 Route::get('/product/view/{id}',[ProductController::class,'view'])->name('view.product');
 Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('delete.product');
 Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('edit.product');
-Route::get('/product/update/{id}',[ProductController::class,'update'])->name('update.product');
+Route::post('/product/update/{id}',[ProductController::class,'update'])->name('update.product');
 
 
 
@@ -94,7 +106,7 @@ Route::get('/payment/delete/{id}',[PaymentController::class,'delete'])->name('de
 Route::get('/payment/delete/{id}',[PaymentController::class,'delete'])->name('delete.payment');
 Route::get('/payment/view/{id}',[PaymentController::class,'views'])->name('view.payment');
 Route::get('/payment/edit/{id}',[PaymentController::class,'edit'])->name('edit.payment');
-Route::get('/payment/update/{id}',[PaymentController::class,'update'])->name('update.payment');
+Route::post('/payment/update/{id}',[PaymentController::class,'update'])->name('update.payment');
 
 //order
 Route::get('/order',[OrderController::class,'order'])->name('cretae.oredr');
@@ -128,5 +140,5 @@ Route::get('/report/view/{id}',[ReportController::class,'view'])->name('view.rep
 Route::get('/report/edit/{id}',[ReportController::class,'edit'])->name('edit.report');
 Route::post('/report/update/{id}',[ReportController::class,'update'])->name('update.report');
 
-
+});
 

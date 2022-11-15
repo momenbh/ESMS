@@ -1,7 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
-       <label for="product">Product id</label>
-        <input id="product" type="number" class="form-control" value="{{ $product->product_id}}" readonly>
+         <label for="price">Product price</label>
+         <input id="price" type="numer" class="form-control"value="{{$product->product_price}}" readonly>
         <label for="name">Product Name</label>
         <input id="name" type="text" class="form-control" value="{{ $product->product_name}}" readonly>
         <label for="brands">Brands</label>
