@@ -1,20 +1,21 @@
 <?php
 
+use App\Models\Category;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\logincontroller;
+use App\Http\Controllers\backend\OrderController;
+use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\VendorController;
+use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\backend\DashbordController;
 use App\Http\Controllers\backend\DiscountController;
 use App\Http\Controllers\backend\FeedbackController;
-use App\Http\Controllers\backend\OrderController;
-use App\Http\Controllers\backend\PaymentController;
-use App\Http\Controllers\backend\ReportController;
 use App\Http\Controllers\backend\SubcategoryController;
-use App\Http\Controllers\logincontroller;
-use App\Models\Category;
-use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ use GuzzleHttp\Middleware;
 //     return view('Backend.master');
 // });
 
+//home
+Route::get('/',[HomeController::class,'home']);
+
 
 
 //login
@@ -43,7 +47,7 @@ Route::get('/logout',[logincontroller::class,'logout'])->name('logout');
 
 
 //dashboard
-Route::get('/',[DashbordController::class,'dashboard'])->name('dashboard');
+Route::get('/dashboard',[DashbordController::class,'dashboard'])->name('dashboard');
 
 //product
 Route::get('/create/product',[ProductController::class,'generate'])->name('product.create');

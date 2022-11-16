@@ -13,6 +13,7 @@ class logincontroller extends Controller
     }
     public function dologin(Request $request){
         $credentials=$request->only('email','password');
+        
         if(Auth::attempt($credentials)){
 
             return redirect()->route('dashboard');
