@@ -16,6 +16,9 @@ class logincontroller extends Controller
         
         if(Auth::attempt($credentials)){
 
+            
+       notify()->success('Login successfully!');
+
             return redirect()->route('dashboard');
         }
         else

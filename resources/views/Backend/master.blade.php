@@ -33,6 +33,8 @@
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+		@notifyCss
+		<style type="text/css"> .notify{ z-index: 1000000; margin-top: 3%; } </style>
     </head>
 	
     <body>
@@ -55,7 +57,7 @@
      @include('Backend.fixed.sidebar')
 
 
-
+	       <x:notify-messages />
           
 			<!-- /Sidebar -->
 			
@@ -63,7 +65,7 @@
             <div class="page-wrapper">
 			
 				<!-- Page Content -->
-
+				
 
         @yield('backend_content')
         
@@ -95,6 +97,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 		<!-- Custom JS -->
 		<script src="{{url('backend/assets/js/app.js')}}"></script>
-		
+		@notifyJs
     </body>
 </html>

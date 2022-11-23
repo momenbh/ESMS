@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<link rel="stylesheet" href="{{url('backend/login/css/style.css')}}">
+	@notifyCss
 
 	</head>
 	<body class="img js-fullheight" style="background-image: url(backend/login/images/eshop.jpeg);">
@@ -25,9 +26,7 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
-			
-		
-		
+			    
 		      	<form action="{{route('do.login')}}"  method= "POST" class="signin-form">
 					@csrf
 		      		<div class="form-group">
@@ -67,6 +66,7 @@
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+  @notifyJs
 
 	</body>
 </html>

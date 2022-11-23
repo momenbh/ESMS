@@ -50,10 +50,19 @@ class CategoryController extends Controller
     }
     public function update(Request $request,$id){
         $category=Category::find($id);
-        $category->update([
-            'category_id'=>$request->category_id,
-           'category_name'=>$request->category_name,
+        $fileName=$category->image;
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads/category',$fileName);
+        }
 
+        $category->update([
+            'name'=>$request->category_name,
+            'status'=>$request->status,
+            'description'=>$request->description,
+            'image' => $fileName,
         ]);
         return redirect()->route('create.category');
     }

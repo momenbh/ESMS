@@ -65,17 +65,29 @@ class ProductController extends Controller
     }
     public function edit($id){
         $product=Product::find($id);
-        return view('Backend.pages.product.productedit',compact('product'));
+        $category=Category::all();
+        return view('Backend.pages.product.productedit',compact('product','category'));
     }
     public function update(Request $request,$id){
         $product=Product::find($id);
+        $fileName=$product->image;
+        // var_dump($fileName);
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+        }
+        // dd($fileName);
+        // dd($product->category_id);
         $product->update([
-
             'product_name'=>$request->product_name,
             'product_price'=>$request->product_price,
+            'category_id'=>$request->category_id,
             'brands'=>$request->brands,
             'stock_status'=>$request->stock_status,
             'product_wranty'=>$request->product_wranty,
+            'image' => $fileName,
            
 
         ]);
