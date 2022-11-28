@@ -16,6 +16,7 @@ use App\Http\Controllers\backend\DashbordController;
 use App\Http\Controllers\backend\DiscountController;
 use App\Http\Controllers\backend\FeedbackController;
 use App\Http\Controllers\backend\SubcategoryController;
+use App\Http\Controllers\forntend\WebHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,13 @@ use App\Http\Controllers\backend\SubcategoryController;
 //     return view('Backend.master');
 // });
 
+
+
 //home
 Route::get('/',[HomeController::class,'home']);
+Route::post('/register',[webHomeController::class,'registration'])->name('registration');
+Route::post('/user/login',[webHomeController::class,'userlogin'])->name('user.login');
+
 
 
 

@@ -20,7 +20,8 @@
                             <li><i class="ti-location-pin"></i> Store location</li>
                             <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
                             <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                            <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+                            <li><i class="ti-power-off"></i><a href=""data-bs-toggle="modal" data-bs-target="#login">Login</a></li>
+                            <li><i class="fa-solid fa-id-card"></i> <a href=""data-bs-toggle="modal" data-bs-target="#registration">Registration</a></li>
                         </ul>
                     </div>
                     <!-- End Top Right -->
