@@ -44,8 +44,33 @@ class webHomeController extends Controller
         return redirect()->back();
         }
     }
+    public function userlogout(){
+        
+        auth()->logout();
+        notify()->success('logout success');
+        return redirect()->back();
 
+
+    }
+     public function profile(){
+        return view('Frontend.pages.profile');
+     }
+    public function updateprofile(Request $request)
     
+    {
+        // dd($request->all());
+        $user=User::find(auth()->user()->id);
+        $user->update([
+            
+            'name'=>$request->customer_name,
+            'email'=>$request->customer_email,
+            'mobile'=>$request->phone_number,
+            'address'=>$request->user_address,
+
+        ]);
+        notify()->success('user profile update');
+        return redirect()->back();
+    }
 
     }
     

@@ -36,18 +36,28 @@ use App\Http\Controllers\forntend\WebHomeController;
 
 
 //home
-Route::get('/',[HomeController::class,'home']);
+
+Route::get('/',[HomeController::class,'home'])->name('home');
 Route::post('/register',[webHomeController::class,'registration'])->name('registration');
 Route::post('/user/login',[webHomeController::class,'userlogin'])->name('user.login');
 
+Route::group(['middleware'=>'auth'],function(){
 
+Route::get('/user/logout',[webHomeController::class,'userlogout'])->name('user.logout');
+Route::get('/profile',[WebHomeController::class,'profile'])->name('user.profile');
+Route::put('/profile/update',[WebHomeController::class,'updateprofile'])->name('profile.update');
+
+
+});
 
 
 //login
 Route::get('/login',[logincontroller::class,'login'])->name('login');
 Route::post('/do-login',[logincontroller::class,'dologin'])->name('do.login');
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
+
+Route::group(['middleware'=>'checkAdmin'],function(){    
 
 Route::get('/logout',[logincontroller::class,'logout'])->name('logout');
 
@@ -151,4 +161,4 @@ Route::get('/report/edit/{id}',[ReportController::class,'edit'])->name('edit.rep
 Route::post('/report/update/{id}',[ReportController::class,'update'])->name('update.report');
 
 });
-
+});
