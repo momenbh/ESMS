@@ -40,6 +40,8 @@ use App\Http\Controllers\forntend\WebHomeController;
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::post('/register',[webHomeController::class,'registration'])->name('registration');
 Route::post('/user/login',[webHomeController::class,'userlogin'])->name('user.login');
+// Route::get('/search',[webHomeController::class,'search'])->name('user.search');
+route::get('/search',[WebHomeController::class,'search'])->name('user.search');
 
 Route::group(['middleware'=>'auth'],function(){
 

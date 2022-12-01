@@ -4,7 +4,7 @@
    <!-- Slider Area -->
    <section class="hero-slider">
     <!-- Single Slider -->
-    <div class="single-slider" style="background: url('/uploads/shirt.jfif')">
+    <div class="single-slider" style="background: url('/uploads/shirt.webp')">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-lg-9 offset-lg-3 col-12">

@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function generate(){
         $product=Product::orderby('id','desc')->paginate(5);
         
-        return view('Backend.pages.product.product',compact('product',));
+        return view('Backend.pages.product.product',compact('product'));
     }
     public function form(){
         $category=Category::all();

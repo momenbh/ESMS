@@ -5,6 +5,7 @@ namespace App\Http\Controllers\forntend;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class webHomeController extends Controller
 {
@@ -70,6 +71,13 @@ class webHomeController extends Controller
         ]);
         notify()->success('user profile update');
         return redirect()->back();
+    }
+    public function search(Request $request)
+    {
+    
+        $searchResult=Product::where('product_name','LIKE',"%$request->search%")->get();
+        
+      return view('Frontend.pages.search',compact('searchResult'));
     }
 
     }

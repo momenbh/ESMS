@@ -24,7 +24,7 @@
 
 
                                 <li><i class="ti-user"></i> <a
-                                        href="{{ route('user.profile')}}">{{ auth()->user()->name }}</a></li>
+                                        href="{{ route('user.profile') }}">{{ auth()->user()->name }}</a></li>
                                 <li><i class="ti-user"></i> <a href="{{ route('user.logout') }}">Logout</a></li>
                             @else
                                 <li><i class="ti-power-off"></i><a href=""data-bs-toggle="modal"
@@ -50,6 +50,7 @@
                     </div>
                     <!--/ End Logo -->
                     <!-- Search Form -->
+                    
                     <div class="search-top">
                         <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
                         <!-- Search Form -->
@@ -57,13 +58,19 @@
                             <form class="search-form">
                                 <input type="text" placeholder="Search here..." name="search">
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
-                            </form>
+                            
                         </div>
                         <!--/ End Search Form -->
                     </div>
+                    </form>
                     <!--/ End Search Form -->
                     <div class="mobile-nav"></div>
                 </div>
+                @if(session()->has('message'))
+
+                <p class="alert alert-success">{{session()->get('message')}}</p>
+              @endif
+                
                 <div class="col-lg-8 col-md-7 col-12">
                     <div class="search-bar-top">
                         <div class="search-bar">
@@ -73,7 +80,9 @@
                                 <option>mobile</option>
                                 <option>kid’s item</option>
                             </select>
-                            <form>
+                       
+                  
+                            <form action="{{route('user.search')}}">
                                 <input name="search" placeholder="Search Products Here....." type="search">
                                 <button class="btnn"><i class="ti-search"></i></button>
                             </form>
@@ -138,10 +147,10 @@
             <div class="cat-nav-head">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="all-category">
+                        {{-- <div class="all-category">
                             <h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
 
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-lg-9 col-12">
                         <div class="menu-area">
