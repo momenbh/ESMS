@@ -40,11 +40,13 @@ use App\Http\Controllers\forntend\WebHomeController;
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::post('/register',[webHomeController::class,'registration'])->name('registration');
 Route::post('/user/login',[webHomeController::class,'userlogin'])->name('user.login');
-// Route::get('/search',[webHomeController::class,'search'])->name('user.search');
-route::get('/search',[WebHomeController::class,'search'])->name('user.search');
 
+Route::get('/search',[webHomeController::class,'search'])->name('user.search');
+Route::get('/category-wise-product/{category_id}',[webHomeController::class,'categorywishproducts'])->name('category.wish.products');
+Route::get('/product/view/{product_id}',[WebHomeController::class,'productview'])->name('customer.product.view');
+   
 Route::group(['middleware'=>'auth'],function(){
-
+Route::get('/product/buy/form/{id}',[webHomeController::class,'productSingleView'])->name('product.single.view');
 Route::get('/user/logout',[webHomeController::class,'userlogout'])->name('user.logout');
 Route::get('/profile',[WebHomeController::class,'profile'])->name('user.profile');
 Route::put('/profile/update',[WebHomeController::class,'updateprofile'])->name('profile.update');

@@ -35,6 +35,7 @@ Version:1.0
 20. 404 Error CSS
 21. Footer CSS
 ========================================*/
+
 .color-plate {
 	position: fixed;
 	display: block;
@@ -81,6 +82,7 @@ Version:1.0
 	margin-bottom: 15px;
 	line-height: 20px;
 }
+
 .color-plate span {
 	width: 42px;
 	height: 35px;

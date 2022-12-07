@@ -79,6 +79,23 @@ class webHomeController extends Controller
         
       return view('Frontend.pages.search',compact('searchResult'));
     }
+    public function categorywishproducts($category_id)
+    {
+         $products=Product::where('category_id',$category_id)->get();
+         
+         return view('Frontend.pages.category_wish_product',compact('products'));
+    }
+    public function productview($product_id)
+    {
+        $product=Product::find($product_id);
+        return view('Frontend.pages.productview',compact('product'));
+    }
+    public function productSingleView($product_id)
+    {
+        $product=Product::find($product_id);
+
+        return view('Frontend.pages.buynow',compact('product'));
+    }
 
     }
     
