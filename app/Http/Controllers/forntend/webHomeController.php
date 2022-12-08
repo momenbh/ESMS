@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\forntend;
 
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
 
 class webHomeController extends Controller
 {
@@ -96,7 +97,20 @@ class webHomeController extends Controller
 
         return view('Frontend.pages.buynow',compact('product'));
     }
+       public function orderCreate(Request $request,$product_id)
+       {
+        Order::create([
+            'user_id'=>auth()->user()->id,
+            'product_id'=>$product_id,
+            'receiver_name'=>$request->first_name,
+            'receiver_email'=>$request->email,
+        ]);
+        notify()->success('Order placed Success.');
+        return redirect()->route('home');
+       }
+      
+    } 
 
-    }
+    
     
 

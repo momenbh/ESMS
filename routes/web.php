@@ -43,6 +43,7 @@ Route::post('/user/login',[webHomeController::class,'userlogin'])->name('user.lo
 
 Route::get('/search',[webHomeController::class,'search'])->name('user.search');
 Route::get('/category-wise-product/{category_id}',[webHomeController::class,'categorywishproducts'])->name('category.wish.products');
+Route::post('/order/create/{product_id}', [WebHomeController::class, 'orderCreate'])->name('order.create');
 Route::get('/product/view/{product_id}',[WebHomeController::class,'productview'])->name('customer.product.view');
    
 Route::group(['middleware'=>'auth'],function(){

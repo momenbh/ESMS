@@ -2,8 +2,8 @@
 @section('frontend_content')
 
 <div class="container">
-    <h1>You are buying product: {{$product->name}}</h1>
-    <h1>Price: {{$product->price}} BDT</h1>
+    <h1>You are buying product: {{$product->product_name}}</h1>
+    <h1>Price: {{$product->product_price}} BDT</h1>
     <hr>
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
@@ -58,7 +58,7 @@
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Billing address</h4>
 
-            <form action="" class="needs-validation" novalidate method="post">
+            <form action="{{route('order.create',$product_id)}}" class="needs-validation" novalidate method="post">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 mb-3">

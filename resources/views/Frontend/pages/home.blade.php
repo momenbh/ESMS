@@ -112,6 +112,7 @@
                                     <div class="tab-single">
                                         <div class="row">
                                             @foreach ($product as $data)
+                                            
                                                 <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div class="single-product">
                                                         <div class="product-img">
