@@ -1,5 +1,6 @@
 @extends('Frontend.master')
 @section('frontend_content')
+
 <div class="container mt-100">
 
     <div class="row">

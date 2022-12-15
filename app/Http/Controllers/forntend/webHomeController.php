@@ -90,12 +90,13 @@ class webHomeController extends Controller
     {
         $product=Product::find($product_id);
         return view('Frontend.pages.productview',compact('product'));
+        
     }
-    public function productSingleView($product_id)
+    public function viewBuyForm($product_id)
     {
         $product=Product::find($product_id);
-
         return view('Frontend.pages.buynow',compact('product'));
+        
     }
        public function orderCreate(Request $request,$product_id)
        {

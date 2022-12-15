@@ -4,9 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
-class CheckAdmin
+class CheckCustomer
 {
     /**
      * Handle an incoming request.
@@ -17,12 +17,20 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role=='admin'){
+        if(Auth::check() && Auth::user()->role=='customer'){
             return $next($request);
-        }
-        return Redirect()->route('home');
-
-
-       
+        
+            }
+            
+            else {
+                return redirect()->route('home');
+            
+        
+        //   if(!auth()->user())
+        //   {
+        //     return Redirect()->route('home');
+        //  }
     }
+    
+  }
 }

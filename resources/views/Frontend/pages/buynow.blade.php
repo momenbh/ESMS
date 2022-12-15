@@ -58,7 +58,7 @@
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Billing address</h4>
 
-            <form action="{{route('order.create',$product_id)}}" class="needs-validation" novalidate method="post">
+            <form action="{{route('order.create',$product)}}" class="needs-validation" novalidate method="post">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -88,7 +88,7 @@
                 </div>
 
 
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Place Order</button>
             </form>
         </div>
     </div>

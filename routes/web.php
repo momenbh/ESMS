@@ -43,14 +43,21 @@ Route::post('/user/login',[webHomeController::class,'userlogin'])->name('user.lo
 
 Route::get('/search',[webHomeController::class,'search'])->name('user.search');
 Route::get('/category-wise-product/{category_id}',[webHomeController::class,'categorywishproducts'])->name('category.wish.products');
-Route::post('/order/create/{product_id}', [WebHomeController::class, 'orderCreate'])->name('order.create');
 Route::get('/product/view/{product_id}',[WebHomeController::class,'productview'])->name('customer.product.view');
-   
+
 Route::group(['middleware'=>'auth'],function(){
-Route::get('/product/buy/form/{id}',[webHomeController::class,'productSingleView'])->name('product.single.view');
+
+
 Route::get('/user/logout',[webHomeController::class,'userlogout'])->name('user.logout');
 Route::get('/profile',[WebHomeController::class,'profile'])->name('user.profile');
 Route::put('/profile/update',[WebHomeController::class,'updateprofile'])->name('profile.update');
+
+
+});
+Route::group(['middleware'=>'checkCustomer'],function(){
+
+Route::post('/order/create/{product_id}', [WebHomeController::class, 'orderCreate'])->name('order.create');
+Route::get('/product/buy/form/{product_id}',[webHomeController::class,'viewBuyForm'])->name('buy.form');
 
 
 });

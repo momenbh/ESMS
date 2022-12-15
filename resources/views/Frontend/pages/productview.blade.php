@@ -140,7 +140,7 @@
                         </a></div>
                 </div>
                 <div class="input-group mb-3 w-75 mx-auto ">
-                    <a  href="{{route('product.single.view',$product->id)}}" class="btn addBtn form-control d-flex:center"> Buy Now</a>
+                    <a  href="{{route('buy.form',$product->id)}}" class="btn addBtn form-control d-flex:center"> Buy Now</a>
                 </div>
                 <div class="bg-b"></div>
             </div>
