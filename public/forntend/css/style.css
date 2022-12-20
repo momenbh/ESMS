@@ -747,7 +747,7 @@ Version:1.0
 	border:none;
 }
 .header.shop .header-inner {
-	background: #333;
+	background:white;
 }
 .header.shop.v3 .header-inner {
 	background: transparent;
@@ -946,7 +946,7 @@ Version:1.0
 	color:#333;
 }
 .header.shop .nav li a {
-	color: #fff;
+	color:#212529;
 	text-transform: capitalize;
 	font-size: 15px;
 	padding: 20px 15px;
@@ -980,7 +980,8 @@ Version:1.0
 	margin:0;
 }
 .header.shop .nav li .dropdown li:hover a{
-	background:#F7941D;
+
+
 }
 .header.shop.v2 .nav li.active .dropdown li a{
 	color:#333 !important;
@@ -1010,7 +1011,7 @@ Version:1.0
 	font-size: 14px;
 }
 .header.shop .nav li .dropdown li a:hover{
-	color:#fff;
+	color:orangered;
 }
 .header.shop.v2 .nav li .dropdown li a:hover{
 	color:#fff !important;

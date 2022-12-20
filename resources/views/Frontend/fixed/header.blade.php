@@ -7,8 +7,8 @@
                     <!-- Top Left -->
                     <div class="top-left">
                         <ul class="list-main">
-                            <li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-                            <li><i class="ti-email"></i> support@shophub.com</li>
+                            <li><i class="ti-headphone-alt"></i> +880(016-31082779)</li>
+                            <li><i class="ti-email"></i> mdmomenbhuiya@gmail.com</li>
                         </ul>
                     </div>
                     <!--/ End Top Left -->
@@ -46,11 +46,11 @@
                 <div class="col-lg-2 col-md-2 col-12">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                        <a href="index.html"><img src="{{url('forntend/images/logo.png')}}" alt="logo"></a>
                     </div>
                     <!--/ End Logo -->
                     <!-- Search Form -->
-                    
+
                     <div class="search-top">
                         <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
                         <!-- Search Form -->
@@ -58,7 +58,7 @@
                             <form class="search-form">
                                 <input type="text" placeholder="Search here..." name="search">
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
-                            
+
                         </div>
                         <!--/ End Search Form -->
                     </div>
@@ -66,11 +66,10 @@
                     <!--/ End Search Form -->
                     <div class="mobile-nav"></div>
                 </div>
-                @if(session()->has('message'))
+                @if (session()->has('message'))
+                    <p class="alert alert-success">{{ session()->get('message') }}</p>
+                @endif
 
-                <p class="alert alert-success">{{session()->get('message')}}</p>
-              @endif
-                
                 <div class="col-lg-8 col-md-7 col-12">
                     <div class="search-bar-top">
                         <div class="search-bar">
@@ -80,9 +79,9 @@
                                 <option>mobile</option>
                                 <option>kid’s item</option>
                             </select>
-                       
-                  
-                            <form action="{{route('user.search')}}">
+
+
+                            <form action="{{ route('user.search') }}">
                                 <input name="search" placeholder="Search Products Here....." type="search">
                                 <button class="btnn"><i class="ti-search"></i></button>
                             </form>
@@ -146,57 +145,57 @@
         <div class="container">
             <div class="cat-nav-head">
                 <div class="row">
-                    <div class="col-lg-3">
-                        <div class="all-category">
-                            <h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
-                            <ul class="main-category">
-                                
-                                <li> @foreach($categories as $category)
-                                    <a href="{{route('category.wish.products',$category->id)}}"> {{$category->name}}</a>
-                                    @endforeach
-                                    
-                                    
-                                </li>
-                            </ul>
-                            </div>
-                    </div>
                     
-                  
-                    <div class="col-lg-9 col-12">
-                        <div class="menu-area">
-                            <!-- Main Menu -->
-                            <nav class="navbar navbar-expand-lg">
-                                <div class="navbar-collapse">
-                                    <div class="nav-inner">
-                                        <ul class="nav main-menu menu navbar-nav">
-                                            <li class="active"><a href="#">Home</a></li>
-                                            <li><a href="#">Product</a></li>
-                                            <li><a href="#">Service</a></li>
-                                             
-                                            <li><a href="#">Shop<i class="ti-angle-down"></i><span
-                                                        class="new">New</span></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="cart.html">Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a></li>
-                                            <li><a href="#">Blog<i class="ti-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                        </ul>
-                                    </div>
+                </div>
+
+
+                <div class="col-lg-9 col-12">
+                    <div class="menu-area" style="display: flex; justify-content: flex-end; align-items:">
+                        <!-- Main Menu -->
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="navbar-collapse">
+                                <div class="nav-inner">
+                                    <ul class="nav main-menu menu navbar-nav">
+                                        <li><a href="">CATEGORIES<i class="ti-angle-down"></i></a>
+                                            <ul class="dropdown">
+                                                <li>
+                                                    @foreach ($categories as $category)
+                                                        <a href="{{ route('category.wish.products', $category->id) }}">
+                                                            {{ $category->name }}</a>
+                                                    @endforeach
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li class="active"><a href="{{route('home')}}">Home</a></li>
+                                        <li><a href="#">Product</a></li>
+                                        <li><a href="#">Service</a></li>
+
+                                        <li><a href="#">Shop<i class="ti-angle-down"></i><span
+                                                    class="new">New</span></a>
+                                            <ul class="dropdown">
+                                                <li><a href="cart.html">Cart</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Pages</a></li>
+                                        <li><a href="#">Blog<i class="ti-angle-down"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
                                 </div>
-                            </nav>
-                            <!--/ End Main Menu -->
-                        </div>
+                            </div>
+                        </nav>
+                        <!--/ End Main Menu -->
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!--/ End Header Inner -->
